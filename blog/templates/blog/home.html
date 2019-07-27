@@ -1,0 +1,15 @@
+{% extends 'blog/main.html' %}
+{% block main_section%}
+
+  {% for post in news %}
+    <h1>  {{post.title}}   </h1>
+    <p> {{post.text}} </p>
+      {% if post.autor %}
+        <p>Autor: {{post.autor}}</p>
+      {%else%}
+        <p>Autor: Anon </p>
+      {%endif%}
+    <p>Data: {{post.date}}</p>
+  {% endfor %}
+
+{%endblock main_section%}
