@@ -1,0 +1,11 @@
+{% extends 'blog/main.html' %}
+{% block main_section%}
+<div class="form-section">
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type = "submit" class ="btn btn-outline-warning">Registrate</button>
+  </form>
+
+</div>
+{%endblock main_section%}

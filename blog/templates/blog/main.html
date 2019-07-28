@@ -26,18 +26,26 @@
 
     </div>
     <div class="navbar-nav">
-      <a href=""class= "btn btn-outline-secondary mr-2">Registration</a>
+      <a href="{% url 'reg'%}"class= "btn btn-outline-secondary mr-2">Registration</a>
       <a href=""class= "btn btn-outline-secondary">Login</a>
     </div>
   </nav>
   <main class="container">
     <div class="row">
       <div class="col-md-8">
-        {% block main_section%}{%endblock%}
+        {%if messages %}
+          {%for mess in messages%}
+            <div class="alert alert-succes">
+              {{mess}}
+            </div>
+          {%endfor%}
+        {%endif%}
+        {% block main_section%}
+        {%endblock%}
       </div>
       <aside class="col-md-4">
         <div class=" p-3 ">
-          <h3><b>Posts</b></h3>
+          <h3><b>Nota Bene</b></h3>
           <img src="http://img.playground.ru/images/7/4/e2ea4695ddc14c78d56c95cabaaa1cf3.jpg" class="img-thumbnail mb-1">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga reiciendis
             officia placeat adipisci odit, sapiente voluptates debitis, id explicabo

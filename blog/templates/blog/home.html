@@ -9,7 +9,7 @@
       {%else%}
         <p>Autor: Anon </p>
       {%endif%}
-    <p>Data: {{post.date}}</p>
+    <p>Data: {{post.date| date:"G:i j-b-Y"}}</p>
   {% endfor %}
 
 {%endblock main_section%}
