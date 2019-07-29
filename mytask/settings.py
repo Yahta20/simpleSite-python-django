@@ -71,7 +71,7 @@ TEMPLATES = [
         },
     },
 ]
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "blog"
 LOGIN_URL = "/account/login/"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBakend"
 

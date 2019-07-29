@@ -1,0 +1,12 @@
+{% extends 'blog/main.html' %}
+{% block main_section%}
+<div class="form-section">
+  <h2>You succesfully logout!</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url 'login'%}" class="btn btn-outline-warning">Login again</a>
+  </form>
+
+</div>
+{%endblock main_section%}

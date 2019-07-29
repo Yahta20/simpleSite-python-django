@@ -26,8 +26,13 @@
 
     </div>
     <div class="navbar-nav">
+      {% if user.is_authenticated %}
+      <a href=""class= "btn btn-outline-secondary mr-2">Profile</a>
+      <a href="{% url 'exit'%}"class= "btn btn-outline-secondary ">Exit</a>
+      {%else%}
       <a href="{% url 'reg'%}"class= "btn btn-outline-secondary mr-2">Registration</a>
-      <a href=""class= "btn btn-outline-secondary">Login</a>
+      <a href="{% url 'login'%}"class= "btn btn-outline-secondary">Login</a>
+      {%endif%}
     </div>
   </nav>
   <main class="container">
@@ -46,7 +51,7 @@
       <aside class="col-md-4">
         <div class=" p-3 ">
           <h3><b>Nota Bene</b></h3>
-          <img src="http://img.playground.ru/images/7/4/e2ea4695ddc14c78d56c95cabaaa1cf3.jpg" class="img-thumbnail mb-1">
+          <img src="https://i.kym-cdn.com/photos/images/facebook/001/357/594/5b4.jpg" class="img-thumbnail mb-1">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga reiciendis
             officia placeat adipisci odit, sapiente voluptates debitis, id explicabo
             expedita ipsam voluptatibus fugit, nesciunt eligendi omnis deleniti!
