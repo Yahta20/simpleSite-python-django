@@ -72,8 +72,10 @@ TEMPLATES = [
     },
 ]
 LOGIN_REDIRECT_URL = "blog"
-LOGIN_URL = "/account/login/"
+LOGIN_URL = "login"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBakend"
+MEDIA_ROOT = os.path.join(BASE_DIR,'pictures')
+MEDIA_URL = '/pictures/'
 
 
 WSGI_APPLICATION = 'mytask.wsgi.application'

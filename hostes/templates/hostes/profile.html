@@ -1,0 +1,20 @@
+{% extends 'blog/main.html' %}
+{% block main_section%}
+<div class="form-section">
+  <h2>{{ user.username}} profile page</h2>
+  <div class="media text-muted pt-3">
+    <img src="{{user.profile.img.url}}" class = "mr-2 rounded" style="wight : 64px; height : 64px">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">{{user.username}}</strong>
+        <b>Email:</b>{{user.email}}
+        </p>
+    </div>
+  <h2 class = "mt-4">Edit profile</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ update_user.as_p }}
+    {{ img_profile.as_p }}
+    <button type = "submit" class ="btn btn-outline-warning">Update Data</button>
+  </form>
+</div>
+{%endblock main_section%}

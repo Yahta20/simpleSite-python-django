@@ -4,6 +4,18 @@
   {% for post in news %}
     <h1>  {{post.title}}   </h1>
     <p> {{post.text}} </p>
+    <div class="row">
+      <div class="col-md-2">
+        {% if post.autor.profile.img %}
+        <img src="{{post.autor.profile.img.url}}" alt="{{post.avtor}}" class="user_image">
+        {%else%}
+        <img src="/pictures/default.jpg" alt="{{post.avtor}}" class="user_image">
+        {%endif%}
+      </div>
+      <div class="col-md-10">
+
+      </div>
+    </div>
       {% if post.autor %}
         <p>Autor: {{post.autor}}</p>
       {%else%}
