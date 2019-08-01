@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
     'hostes.apps.HostesConfig',
     'blog.apps.BlogConfig',
     'allauth',
@@ -136,3 +137,6 @@ SITE_ID = 1
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
