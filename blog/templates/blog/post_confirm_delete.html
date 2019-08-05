@@ -1,0 +1,12 @@
+{% extends 'blog/main.html' %}
+{% block main_section%}
+<div class="form-section">
+  <h2>Delete Post {{object.title}}</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <button type = "submit" class ="btn btn-outline-danger">Delete post</button>
+    <a href="{%url 'blog_detail' object.id %}">Cansel</a>
+  </form>
+
+</div>
+{%endblock main_section%}

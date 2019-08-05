@@ -23,6 +23,7 @@
       <p>Data: {{post.date| date:"G:i j-b-Y"}}</p>
       </div>
     </div>
+    <a href="{% url 'blog_detail' post.id %}" class = "btn btn-outline-warning">Read more</a>
 </div>
   {% endfor %}
 

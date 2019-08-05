@@ -1,0 +1,36 @@
+{% extends 'blog/main.html' %}
+{% load crispy_forms_tags%}
+{% block main_section%}
+
+
+<div class='alert alert-light'>
+  <a href="{%url 'blog'%}">Go back</a>
+    <h1>  {{object.title}}   </h1>
+    <p> {{object.text}} </p>
+    <div class="row">
+      <div class="col-md-2">
+        {% if object.autor.profile.img %}
+        <img src="{{object.autor.profile.img.url}}" alt="{{object.avtor}}" class="user_image">
+        {%else%}
+        <img src="/pictures/default.jpg" alt="{{object.avtor}}" class="user_image">
+        {%endif%}
+      </div>
+      <div class="col-md-10">
+        {% if object.autor %}
+          <p>Autor: {{object.autor}}</p>
+        {%else%}
+          <p>Autor: Anon </p>
+        {%endif%}
+      <p>Data: {{object.date| date:"G:i j-b-Y"}}</p>
+      </div>
+    </div>
+    {% if object.autor == user %}
+    <hr>
+    <a href="{% url 'blog_update' object.id %}"class = "btn btn-info">Modify post</a>
+    <a href="{% url 'blog_delete' object.id %}"class = "btn btn-danger">Delete post</a>
+
+    {%endif%}
+</div>
+
+
+{%endblock main_section%}
