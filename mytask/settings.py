@@ -141,9 +141,13 @@ STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBakend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+STATIC_URL = '/static/'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = ""
-EMAIL_HOST_PASSWORD = ""
+EMAIL_USE_SSL = False
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'wedmailpower@gmail.com'
+EMAIL_HOST_PASSWORD = 'l;FYUJ2019'
+EMAIL_PORT = 587
